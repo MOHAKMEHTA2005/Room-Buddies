@@ -15,7 +15,7 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
   const navItems = [
     { id: "hero", label: "Home", icon: Home },
     { id: "dashboard", label: "Dashboard", icon: Users },
-    { id: "voice", label: "Preferences", icon: MessageCircle },
+    { id: "quiz", label: "Compatibility", icon: MessageCircle },
     { id: "matching", label: "Matches", icon: Heart },
     { id: "hostels", label: "Hostels", icon: MapPin },
   ];

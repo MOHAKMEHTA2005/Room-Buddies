@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Hero from "@/components/Hero";
+import Features from "@/components/Features";
 import VoiceInput from "@/components/VoiceInput";
+import CompatibilityQuiz from "@/components/CompatibilityQuiz";
 import RoommateMatching from "@/components/RoommateMatching";
 import HostelDiscovery from "@/components/HostelDiscovery";
 import Dashboard from "@/components/Dashboard";
@@ -12,17 +14,29 @@ const Index = () => {
   const renderSection = () => {
     switch (currentSection) {
       case "hero":
-        return <Hero />;
+        return (
+          <div>
+            <Hero />
+            <Features />
+          </div>
+        );
       case "dashboard":
         return <Dashboard />;
       case "voice":
         return <VoiceInput />;
+      case "quiz":
+        return <CompatibilityQuiz />;
       case "matching":
         return <RoommateMatching />;
       case "hostels":
         return <HostelDiscovery />;
       default:
-        return <Hero />;
+        return (
+          <div>
+            <Hero />
+            <Features />
+          </div>
+        );
     }
   };
 

@@ -10,9 +10,9 @@ import hostel1 from "@/assets/hostel-1.jpg";
 
 const Dashboard = () => {
   const matches = [
-    { id: "1", name: "Sarah Chen", image: profile1, lastMessage: "Hey! Would love to chat about the apartment", time: "2h ago", unread: true },
-    { id: "2", name: "Maya Rodriguez", image: profile2, lastMessage: "When would be good for a coffee?", time: "1d ago", unread: false },
-    { id: "3", name: "Priya Patel", image: profile3, lastMessage: "Thanks for the hostel recommendation!", time: "3d ago", unread: false }
+    { id: "1", name: "Ujjwal Agarwal", image: profile1, lastMessage: "Hey! Would love to chat about the apartment", time: "2h ago", unread: true },
+    { id: "2", name: "Himanshi Agarwal", image: profile2, lastMessage: "When would be good for a coffee?", time: "1d ago", unread: false },
+    { id: "3", name: "Maaz Anwar", image: profile3, lastMessage: "Thanks for the hostel recommendation!", time: "3d ago", unread: false }
   ];
 
   const savedHostels = [
@@ -20,9 +20,9 @@ const Dashboard = () => {
   ];
 
   const recentActivity = [
-    { type: "match", message: "You matched with Sarah Chen", time: "2 hours ago" },
-    { type: "message", message: "Maya sent you a message", time: "1 day ago" },
-    { type: "hostel", message: "New hostel saved: The Nest", time: "2 days ago" }
+    { type: "match", message: "You matched with Ujjwal Agarwal", time: "2 hours ago" },
+    { type: "message", message: "Himanshi sent you a message", time: "1 day ago" },
+    { type: "hostel", message: "New hostel saved: Comfort Inn", time: "2 days ago" }
   ];
 
   return (
@@ -30,7 +30,7 @@ const Dashboard = () => {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold">Welcome back, Emma!</h1>
+          <h1 className="text-3xl font-bold">Welcome back, Priya!</h1>
           <p className="text-muted-foreground">Let's find your perfect roommate match</p>
         </div>
         <div className="flex items-center gap-4">

@@ -23,36 +23,36 @@ interface Roommate {
 const sampleRoommates: Roommate[] = [
   {
     id: "1",
-    name: "Sarah Chen",
+    name: "Ujjwal Agarwal",
     age: 24,
     image: profile1,
     bio: "Marketing professional who loves cooking and yoga. Looking for a clean, friendly roommate to share a cozy apartment near downtown.",
     interests: ["Cooking", "Yoga", "Reading", "Movies"],
-    location: "Downtown, 0.5 miles",
+    location: "Downtown Delhi, 0.5 km",
     matchPercentage: 94,
     verified: true,
     badges: ["Early Bird", "Clean", "Social"]
   },
   {
     id: "2", 
-    name: "Maya Rodriguez",
+    name: "Himanshi Agarwal",
     age: 26,
     image: profile2,
     bio: "Graduate student studying environmental science. Quiet, studious, but enjoys weekend adventures and coffee shop hangouts.",
     interests: ["Hiking", "Coffee", "Sustainability", "Art"],
-    location: "University District, 1.2 miles",
+    location: "University Area, 1.2 km",
     matchPercentage: 89,
     verified: true,
     badges: ["Student", "Eco-Friendly", "Adventurous"]
   },
   {
     id: "3",
-    name: "Priya Patel",
+    name: "Pooja Kumari",
     age: 23,
     image: profile3,
     bio: "Software engineer who works remotely. Love plants, board games, and having deep conversations over tea.",
     interests: ["Gaming", "Plants", "Tech", "Tea"],
-    location: "Tech Hub, 0.8 miles",
+    location: "Tech Hub, 0.8 km",
     matchPercentage: 92,
     verified: true,
     badges: ["Remote Worker", "Plant Parent", "Gamer"]
