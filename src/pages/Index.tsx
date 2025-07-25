@@ -1,12 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Hero from "@/components/Hero";
+import VoiceInput from "@/components/VoiceInput";
+import RoommateMatching from "@/components/RoommateMatching";
+import HostelDiscovery from "@/components/HostelDiscovery";
+import Dashboard from "@/components/Dashboard";
+import Navigation from "@/components/Navigation";
 
 const Index = () => {
+  const [currentSection, setCurrentSection] = useState("hero");
+
+  const renderSection = () => {
+    switch (currentSection) {
+      case "hero":
+        return <Hero />;
+      case "dashboard":
+        return <Dashboard />;
+      case "voice":
+        return <VoiceInput />;
+      case "matching":
+        return <RoommateMatching />;
+      case "hostels":
+        return <HostelDiscovery />;
+      default:
+        return <Hero />;
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navigation onNavigate={setCurrentSection} />
+      <main className="pt-16 pb-20 md:pb-0">
+        {renderSection()}
+      </main>
     </div>
   );
 };
