@@ -24,7 +24,7 @@ const sampleRoommates: Roommate[] = [
   {
     id: "1",
     name: "Ujjwal Agarwal",
-    age: 24,
+    age: 19,
     image: profile1,
     bio: "Marketing professional who loves cooking and yoga. Looking for a clean, friendly roommate to share a cozy apartment near downtown.",
     interests: ["Cooking", "Yoga", "Reading", "Movies"],
@@ -36,7 +36,7 @@ const sampleRoommates: Roommate[] = [
   {
     id: "2", 
     name: "Himanshi Agarwal",
-    age: 26,
+    age: 19,
     image: profile2,
     bio: "Graduate student studying environmental science. Quiet, studious, but enjoys weekend adventures and coffee shop hangouts.",
     interests: ["Hiking", "Coffee", "Sustainability", "Art"],
@@ -48,14 +48,26 @@ const sampleRoommates: Roommate[] = [
   {
     id: "3",
     name: "Pooja Kumari",
-    age: 23,
-    image: profile3,
+    age: 20,
+    image: profile2,
     bio: "Software engineer who works remotely. Love plants, board games, and having deep conversations over tea.",
     interests: ["Gaming", "Plants", "Tech", "Tea"],
     location: "Tech Hub, 0.8 km",
     matchPercentage: 92,
     verified: true,
     badges: ["Remote Worker", "Plant Parent", "Gamer"]
+  },
+    {
+    id: "4",
+    name: "Maaz Anwar",
+    age: 19,
+    image: profile3,
+    bio: "Software engineer who works remotely. Quiet, studious, and having deep conversations over tea.",
+    interests: ["Cooking", "Yoga", "Tech", "Tea"],
+    location: "University Area, 0.8 km",
+    matchPercentage: 87,
+    verified: true,
+    badges: ["Student", "Remote Worker", "Interactive"]
   }
 ];
 

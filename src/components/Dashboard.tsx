@@ -12,7 +12,8 @@ const Dashboard = () => {
   const matches = [
     { id: "1", name: "Ujjwal Agarwal", image: profile1, lastMessage: "Hey! Would love to chat about the apartment", time: "2h ago", unread: true },
     { id: "2", name: "Himanshi Agarwal", image: profile2, lastMessage: "When would be good for a coffee?", time: "1d ago", unread: false },
-    { id: "3", name: "Maaz Anwar", image: profile3, lastMessage: "Thanks for the hostel recommendation!", time: "3d ago", unread: false }
+    { id: "3", name: "Maaz Anwar", image: profile3, lastMessage: "Thanks for the hostel recommendation!", time: "3d ago", unread: false },
+    { id: "4", name: "Pooja Kumari Kusum", image: profile2, lastMessage: "Yo Nishchay, Remember me?", time: "4d ago", unread: false }
   ];
 
   const savedHostels = [
@@ -30,7 +31,7 @@ const Dashboard = () => {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold">Welcome back, Priya!</h1>
+          <h1 className="text-3xl font-bold">Welcome back, Nishchay!</h1>
           <p className="text-muted-foreground">Let's find your perfect roommate match</p>
         </div>
         <div className="flex items-center gap-4">
