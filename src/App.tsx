@@ -7,7 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoadingScreen from "@/components/LoadingScreen";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import FloatingElements from "@/components/FloatingElements";
+import { AuthProvider } from "@/contexts/AuthContext";
 import Index from "./pages/Index";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -18,25 +20,28 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        
-        {isLoading && (
-          <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
-        )}
-        
-        {!isLoading && (
-          <>
-            <InteractiveBackground />
-            <FloatingElements />
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </BrowserRouter>
-          </>
-        )}
+        <AuthProvider>
+          <Toaster />
+          <Sonner />
+          
+          {isLoading && (
+            <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+          )}
+          
+          {!isLoading && (
+            <>
+              <InteractiveBackground />
+              <FloatingElements />
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/auth" element={<Auth />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </BrowserRouter>
+            </>
+          )}
+        </AuthProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );

@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Menu, X, Users, MapPin, MessageCircle, Home } from "lucide-react";
+import { Heart, Menu, X, Users, MapPin, MessageCircle, Home, LogOut } from "lucide-react";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface NavigationProps {
   onNavigate: (section: string) => void;
@@ -11,6 +12,8 @@ interface NavigationProps {
 const Navigation = ({ onNavigate }: NavigationProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, signOut } = useAuth();
 
   const navItems = [
     { id: "hero", label: "Home", icon: Home },
@@ -22,6 +25,11 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
 
   const handleNavigate = (section: string) => {
     onNavigate(section);
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleSignOut = async () => {
+    await signOut();
     setIsMobileMenuOpen(false);
   };
 
@@ -56,8 +64,26 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
 
             {/* Auth Buttons */}
             <div className="hidden md:flex items-center gap-3">
-              <Button variant="outline">Sign In</Button>
-              <Button variant="hero">Get Started</Button>
+              {user ? (
+                <div className="flex items-center gap-3">
+                  <span className="text-sm text-muted-foreground">
+                    Welcome, {user.email}
+                  </span>
+                  <Button variant="outline" onClick={handleSignOut}>
+                    <LogOut className="w-4 h-4 mr-2" />
+                    Sign Out
+                  </Button>
+                </div>
+              ) : (
+                <>
+                  <Button variant="outline" onClick={() => navigate("/auth")}>
+                    Sign In
+                  </Button>
+                  <Button variant="hero" onClick={() => navigate("/auth")}>
+                    Get Started
+                  </Button>
+                </>
+              )}
             </div>
 
             {/* Mobile Menu Button */}
@@ -89,8 +115,26 @@ const Navigation = ({ onNavigate }: NavigationProps) => {
                   </Button>
                 ))}
                 <div className="pt-4 border-t border-border space-y-2">
-                  <Button variant="outline" className="w-full">Sign In</Button>
-                  <Button variant="hero" className="w-full">Get Started</Button>
+                  {user ? (
+                    <>
+                      <div className="text-sm text-muted-foreground px-3 py-2">
+                        Welcome, {user.email}
+                      </div>
+                      <Button variant="outline" className="w-full" onClick={handleSignOut}>
+                        <LogOut className="w-4 h-4 mr-2" />
+                        Sign Out
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button variant="outline" className="w-full" onClick={() => navigate("/auth")}>
+                        Sign In
+                      </Button>
+                      <Button variant="hero" className="w-full" onClick={() => navigate("/auth")}>
+                        Get Started
+                      </Button>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
